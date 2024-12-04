@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #80deea, #a3fdb8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.header-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #80deea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #80deea, #53a3f9);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+}
+
+p {
+    margin-top: 15px;
+}
+
+.footer-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.arrow-container i {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.arrow-container i.active {
+    transform: rotate(180deg);
+}
+
+.arrow-container:hover i {
+    transform: translateY(-2px);
+}
+
+.footer-content {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    padding: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.footer-content.active {
+    max-height: 300px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.legal-info, .contact-info {
+    flex: 1;
+    max-width: 400px;
+    padding: 0 20px;
+}
+
+h3 {
+    color: #7FD9DA;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+.arrow-container:hover i {
+    transform: translateY(-2px);
+}
