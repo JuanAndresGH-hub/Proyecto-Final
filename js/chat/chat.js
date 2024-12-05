@@ -3,18 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chatMessages');
     const sendButton = document.getElementById('sendButton');
 
-    // Base de datos de respuestas del bot
-    const botResponses = {
-        "hola": "¡Hola! ¿Cómo puedo ayudarte?",
-        "cómo estás": "Estoy bien, gracias por preguntar. ¿Y tú?",
-        "adiós": "¡Hasta luego! Fue un placer hablar contigo.",
-        "qué puedes hacer": "Puedo responder preguntas simples. ¡Intenta preguntarme algo!",
-        "default": "Lo siento, no entendí eso. ¿Puedes intentar preguntarme de otra forma?"
-    };
-
     // Función para enviar un mensaje
     function sendMessage() {
-        const messageText = messageInput.value.trim().toLowerCase(); // Convertir a minúsculas y eliminar espacios
+        const messageText = messageInput.value.trim(); // Obtener el texto del mensaje y eliminar espacios
 
         if (messageText === '') {
             alert('Por favor, escribe un mensaje antes de enviarlo.');
@@ -44,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hacer scroll hacia abajo automáticamente
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
-        // Generar respuesta del bot
+        // Generar respuesta del bot después de 1 segundo
         setTimeout(() => {
             generateBotResponse(messageText);
         }, 1000);
@@ -63,16 +54,41 @@ document.addEventListener('DOMContentLoaded', () => {
         const botMessageText = document.createElement('div');
         botMessageText.classList.add('message-text');
 
-        // Seleccionar la respuesta del bot basada en el mensaje del usuario
-        const response = botResponses[userInput] || botResponses["default"];
-        botMessageText.textContent = response;
+        // Respuestas basadas en coincidencias más inteligentes
+        const responses = generateResponse(userInput);
+
+        botMessageText.textContent = responses;
 
         botMessage.appendChild(botProfilePic);
         botMessage.appendChild(botMessageText);
         chatMessages.appendChild(botMessage);
 
-        // Hacer scroll hacia abajo
+        // Hacer scroll hacia abajo automáticamente
         chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Función para generar respuestas coherentes
+    function generateResponse(userInput) {
+        const input = userInput.toLowerCase();
+
+        // Detectar saludos y respuestas comunes
+        if (input.includes('hola') || input.includes('buenas')) {
+            return "¡Hola! ¿Cómo estás?";
+        } else if (input.includes('cómo estás') || input.includes('como estas')) {
+            return "Estoy bien, gracias por preguntar. ¿Y tú?";
+        } else if (input.includes('tu nombre')) {
+            return "Soy un bot sin nombre, pero me puedes llamar Bot si lo deseas.";
+        } else if (input.includes('adiós') || input.includes('chau')) {
+            return "¡Hasta luego! Fue un gusto hablar contigo.";
+        } else if (input.includes('qué haces')) {
+            return "Estoy aquí para ayudarte con cualquier cosa que necesites.";
+        } else if (input.includes('cuántos años tienes')) {
+            return "Soy un bot, no tengo edad, pero me encanta aprender constantemente.";
+        } else if (input.includes('cómo funciona este chat')) {
+            return "Este chat funciona respondiendo a tus preguntas. Solo escríbeme algo y yo trataré de responderte.";
+        } else {
+            return "Lo siento, no entiendo completamente eso. ¿Puedes ser más específico?";
+        }
     }
 
     // Evento para el botón "Enviar"
