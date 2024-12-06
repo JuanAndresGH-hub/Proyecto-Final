@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="../../css/chat/chat.css">
+    <link rel="stylesheet" href="../../css/Home page/lupa.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">TradeVon</div>
+        <ul class="navbar-menu">
+            <li><a href="../../html/Home page/home.html">Inicio</a></li>
+            <li><a href="../../html/catalogo/catalogo.html">Catálogo</a></li>
+            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+        <div class="search-icons-container">
+            <div class="icons">
+                <a href="../../html/perfil/perfil-juan.html" onclick="redirigirPerfil()">
+                    <img src="../../imagenes/home page/perfil.png" alt="Perfil" class="profile-icon">
+                </a>
+                <a href="#" class="icono-lupa">
+                    <i class="fas fa-search"></i>
+                </a>
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Buscar...">
+                    <ul class="suggestions"></ul> <!-- Se añadieron las sugerencias aquí -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat</h2>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message">
+                <img src="../../imagenes/perfil 7/pfp7.jpg" alt="Perfil" class="profile-pic">
+                <div class="message-text">Hola</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Escribe un mensaje...">
+            <button id="sendButton">Enviar</button>
+        </div>
+    </div>
+
+    <script src="../../js/chat/chat-carlos.js"></script>
+    <script src="../../js/home page/lupa.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,321 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #88e8c1, #a8ebfd);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    perspective: 1000px;
+}
+
+h1 {
+    color: #2C3E50;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 25px;
+}
+
+.card {
+    position: relative; 
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(20% - 25px);
+    min-width: 240px;
+    height: 450px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.contenido {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.producto-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.card.flipped .contenido {
+    display: none;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card:hover .producto-img {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255);
+}
+
+.imagen-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+}
+
+.avatar-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px auto;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.avatar-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 123, 255);
+}
+
+.card h2, .card p {
+    margin: 5px 0;
+}
+
+.precio {
+    font-size: 1.1em;
+    color: #2C3E50;
+    margin: 10px 0;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+.card button {
+    background-color: #5DADE2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #3498DB;
+}
+
+a {
+    color: #6C3483;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1400px) {
+    .card {
+        width: calc(25% - 25px);
+    }
+}
+
+@media (max-width: 1100px) {
+    .card {
+        width: calc(33.33% - 25px);
+    }
+}
+
+@media (max-width: 800px) {
+    .card {
+        width: calc(50% - 25px);
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+
+.arrow-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.footer-content {
+    padding: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    opacity: 1;
+}
+
+.footer-content.active {
+    max-height: 300px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.legal-info, .contact-info {
+    flex: 1;
+    max-width: 400px;
+    padding: 0 20px;
+}
+
+h3 {
+    color: #7FD9DA;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.product a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.catalogo-header {
+    background-color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalogo-header nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.catalogo-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.catalogo-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+
+}
+
+.catalogo-header nav ul li {
+    display: inline;
+}
+
+
+.catalogo-header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+    justify-content: center;
+}
+
+.catalogo-header nav ul li a:hover {
+    color: #007BFF;
+    justify-content: center;
+}
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.search-icons-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-icons-container i,
+.profile-icon {
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Campo de búsqueda */
+.search-icons-container input[type="text"] {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+

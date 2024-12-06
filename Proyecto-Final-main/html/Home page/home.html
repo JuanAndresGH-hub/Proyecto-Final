@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeVon</title>
+    <link rel="stylesheet" href="../../css/Home page/lupa.css">
+    <link rel="stylesheet" href="../../css/Home page/home_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">TradeVon</div>
+        <nav>
+            <ul>
+                <li><a href="../../html/catalogo/catalogo.html" class="active">Catálogo</a></li>
+                <li><a href="#about">Acerca de nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <div class="search-icons-container">
+            <div class="icons">
+                <a href="../../html/perfil/perfil-juan.html" onclick="redirigirPerfil()">
+                    <img src="../../imagenes/home page/perfil.png" alt="Perfil" class="profile-icon">
+                </a>
+                <a href="#" class="icono-lupa">
+                    <i class="fas fa-search"></i>
+                </a>
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Buscar...">
+                    <ul class="suggestions"></ul> 
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Bienvenido a TradeVon, el sitio web de intercambios</h2>
+            <a href="/html/login-register/login.html" class="btn">¿Ya tienes una cuenta?</a>
+        </div>
+        <img src="../../imagenes/registro/registro-login.jpg" alt="Fashion Image">
+    </section>
+
+    <section class="exchange-info">
+        <div class="exchange-section">
+            <div class="text-content"></div>
+            <div class="image-content">
+                <img src="../../imagenes/home page/swap.png" alt="Intercambio de ropa">
+            </div>
+        </div>
+        <div class="exchange-content">
+            <div class="exchange-text">
+                <h2>Quieres empezar a intercambiar y unirte a nuestra comunidad?</h2>
+                <p>Explora la más nueva experiencia de intercambio junto a una comunidad de personas que buscan cambiar su estilo de vida.</p>
+                <a href="../../html/paso a paso/paso_a_paso.html" class="btn">¡Comienza ya!</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="best-seller">
+        <h2>Nuestros últimos productos</h2>
+        <div class="carousel">
+            <div class="products">
+                <a href="../../html/catalogo/catalogo.html" class="product product-card" id="laptop">
+                    <img src="../../imagenes/perfil 1/producto1.jpeg" alt="Laptop Lenovo Legion">
+                    <h3 class="product-title">Laptop Lenovo Legion</h3>
+                </a>
+                <a href="../../html/catalogo/catalogo.html" class="product product-card" id="iphone">
+                    <img src="../../imagenes/perfil 2/producto2.jpg" alt="iPhone 15 Pro Max">
+                    <h3 class="product-title">iPhone 15 Pro Max</h3>
+                </a>
+                <a href="../../html/catalogo/catalogo.html" class="product product-card" id="airpods">
+                    <img src="../../imagenes/perfil 4/producto4.jpg" alt="Airpods 3ra gen">
+                    <h3 class="product-title">Airpods 3ra gen</h3>
+                </a>
+                <a href="../../html/catalogo/catalogo.html" class="product product-card" id="watch">
+                    <img src="../../imagenes/perfil 3/producto3.jpeg" alt="Apple Watch Series 7">
+                    <h3 class="product-title">Apple Watch Series 7</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../../js/home page/lupa.js"></script>
+
+    <footer>
+        <div class="footer-content">
+            <div id="about" class="legal">
+                <h3>Información Legal</h3>
+                <p>© 2024 TradeVon - Todos los derechos reservados</p>
+                <p>Términos y Condiciones</p>
+                <p>Política de Privacidad</p>
+            </div>
+            <div id="contact" class="contact">
+                <h3>Contacto</h3>
+                <p>Email: contacto@tradevon.com</p>
+                <p>Teléfono: 304 454 3807</p>
+                <p>Dirección: Calarcá, Quindío</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

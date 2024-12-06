@@ -1,0 +1,112 @@
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.search-container.active {
+    opacity: 1;
+    width: 200px;
+}
+
+.search-bar {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.icono-lupa {
+    cursor: pointer;
+}
+
+.icono-lupa {
+    cursor: pointer;
+}
+.suggestions {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+}
+
+.suggestions li {
+    padding: 12px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestions-list li {
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+.search-icons-container {
+    position: relative;
+}
+
+.search-bar {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    transition: width 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-bar:focus {
+    width: 250px;
+    outline: none;
+    border-color: #007bff;
+}

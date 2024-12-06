@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeVon</title>
+    <link rel="stylesheet" href="../../css/login-register/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="../../imagenes/registro/registro-login.jpg" alt="Ilustración" class="header-image">
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <h2>TradeVon</h2>
+            <input type="text" id="username" placeholder="Nombre de usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+            <p id="error-message" style="color: red;"></p>
+            <p>¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a></p>
+        </form>
+    </div>
+
+    <script>
+        const users = {
+            "juan": { password: "123456", profile: "../../html/perfil/perfil-juan.html" },
+        };
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (users[username] && users[username].password === password) {
+                window.location.href = users[username].profile;
+            } else {
+                errorMessage.textContent = "Credenciales incorrectas. Intente de nuevo.";
+            }
+        }
+    </script>
+
+    <div class="footer-container">
+        <div class="arrow-container">
+            <i class="fas fa-chevron-down" id="toggleFooter"></i>
+        </div>
+        <div class="footer-content" id="footerContent">
+            <div class="footer-info">
+                <div class="legal-info">
+                    <h3>Información Legal</h3>
+                    <p>© 2024 TradeVon - Todos los derechos reservados</p>
+                    <p>Términos y Condiciones</p>
+                    <p>Política de Privacidad</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Contacto</h3>
+                    <p>Email: contacto@tradevon.com</p>
+                    <p>Teléfono: 304 454 3807</p>
+                    <p>Dirección: Calarcá, Quindío</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

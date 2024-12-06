@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario</title>
+  <link rel="stylesheet" href="../../css/perfil/perfil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../../css/Home page/lupa.css">
+  
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <span class="logo">TradeVon</span>
+      <ul class="nav-links">
+
+        <li><a href="../../html/Home page/home.html">Inicio</a></li>
+        <li><a href="../../html/catalogo/catalogo.html">Catalogo</a></li>
+        <li><a href="#about">Acerca de nosotros</a></li>
+        <li><a href="#contact">Contacto</a></li>
+
+      </ul>
+      <div class="search-icons-container">
+        <div class="icons">
+            <a href="../../html/perfil/perfil-juan.html" onclick="redirigirPerfil()">
+                <img src="../../imagenes/home page/perfil.png" alt="Perfil" class="profile-icon">
+            </a>
+            <a href="#" class="icono-lupa">
+                <i class="fas fa-search"></i>
+            </a>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Buscar...">
+                <ul class="suggestions"></ul>
+        </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="profile-header">
+      <img src="../../imagenes/pfp/pfp.jpg" alt="Foto de perfil" class="profile-photo">
+      <h1 class="profile-name">Juan Andres</h1>
+      <p class="profile-description">Interesado en intercambios de gadgets y accesorios.</p>
+    </header>
+
+    <section class="history-section">
+      <h2>Historial de Intercambios</h2>
+      <ul class="history-list" id="exchange-history">
+      </ul>
+    </section>
+
+    <section class="rating-section">
+      <h2>Valoraciones</h2>
+      <div id="reviews">
+        <div class="valoraciones">
+            <div class="valoracion">
+                <img src="../../imagenes/perfil 2/pfp2.jpg" alt="Perfil" class="profile-pic">
+                <div>
+                    <strong>Steeven Cardona</strong>
+                    <p><em>¡Excelente intercambio! Todo perfecto.</em></p>
+                    <p>Puntuación: ★★★★★</p>
+                </div>
+            </div>
+            <div class="valoracion">
+                <img src="../../imagenes/perfil 3/pfp3.jpg" alt="Perfil" class="profile-pic">
+                <div>
+                    <strong>Carlos Daniel</strong>
+                    <p><em>Buena experiencia, aunque hubo un pequeño retraso.</em></p>
+                    <p>Puntuación: ★★★★☆</p>
+                </div>
+            </div>
+            <div class="valoracion">
+                <img src="../../imagenes/perfil 4/pfp4.jpg" alt="Perfil" class="profile-pic">
+                <div>
+                    <strong>Kevin Buitrago</strong>
+                    <p><em>El producto no estaba en las mejores condiciones.</em></p>
+                    <p>Puntuación: ★★★☆☆</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="footer-content">
+        <div id="about" class="legal">
+            <h3>Información Legal</h3>
+            <p>© 2024 TradeVon - Todos los derechos reservados</p>
+            <p>Términos y Condiciones</p>
+            <p>Política de Privacidad</p>
+        </div>
+        <div id="contact" class="contact">
+            <h3>Contacto</h3>
+            <p>Email: contacto@tradevon.com</p>
+            <p>Teléfono: 304 454 3807</p>
+            <p>Dirección: Calarcá, Quindío</p>
+        </div>
+    </div>
+</footer>
+
+  <script src="../../js/perfil/perfil-juan.js"></script>
+  <script src="../../js/Home page/lupa.js"></script>    
+  
+</body>
+</html>
